@@ -6,7 +6,7 @@
 <h1>The XMLHttpRequest Object</h1>
 <div id="ajax-container" style="border: 1px solid black;">
     <div id="ajax-demo">
-        <p>Does this get replaced?</p>
+        <p>Does this get replaced???</p>
     </div>
 </div>
 <button type="button" onclick="loadDoc()">Load More</button>
@@ -17,8 +17,7 @@ function loadDoc() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("ajax-demo").innerHTML =
-      this.responseText;
+      document.getElementById("ajax-demo").appendChild(this.responseText);
     }
   };
   xhttp.open("GET", "ajax_info.html", true);
