@@ -17,7 +17,8 @@ function loadDoc() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("ajax-demo").appendChild(this.responseText);
+        var test = this.responseText;
+      document.getElementById("ajax-demo").appendChild(test);
     }
   };
   xhttp.open("GET", "ajax_info.html", true);
