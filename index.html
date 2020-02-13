@@ -122,7 +122,7 @@
                         </li>
                     </ul>
                     <div id="pagination-button">
-                        <button type="button" onclick="loadDoc()">Load More</button>
+                        <button type="button" onclick="loadMore()">Load More</button>
                     </div>
                 </section>
 
@@ -135,19 +135,27 @@
             <img id="modal-content" src="">
         </div>
         <script>
-            let pages = ["page2.html", "page3.html", "page4.html"];
-            let i = 0;
-            function loadDoc() {
-              var xhttp = new XMLHttpRequest();
-              xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                  document.getElementById("pagination").insertAdjacentHTML('beforeend', this.responseText);
+            (function () {
+                let pages = ["page2.html", "page3.html", "page4.html"];
+                let i = 0;
+                let paginationDiv = document.getElementById("pagination-button");
+                function loadMore() {
+                    if(i < pages.length) {
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function() {
+                            if (this.readyState == 4 && this.status == 200) {
+                                document.getElementById("pagination").insertAdjacentHTML('beforeend', this.responseText);
+                            }
+                        };
+                    xhttp.open("GET", pages[i], true);
+                    xhttp.send();
+                    i++
+                    }
+                    if(i == 2) {
+                        paginationDiv.style.display = "none";
+                    }
                 }
-              };
-              xhttp.open("GET", pages[i], true);
-              xhttp.send();
-              i++
-            }
+            })();
         </script>
         <script src="main.js"></script>
     </body>
