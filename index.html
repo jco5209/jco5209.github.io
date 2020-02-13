@@ -121,7 +121,9 @@
                             </figure>
                         </li>
                     </ul>
-                    <button type="button" onclick="loadDoc()">Load More</button>
+                    <div id="pagination-button">
+                        <button type="button" onclick="loadDoc()">Load More</button>
+                    </div>
                 </section>
 
             </main>
@@ -133,6 +135,8 @@
             <img id="modal-content" src="">
         </div>
         <script>
+            let pages = ["page2.html", "page3.html", "page4.html"];
+            let i = 0;
             function loadDoc() {
               var xhttp = new XMLHttpRequest();
               xhttp.onreadystatechange = function() {
@@ -140,8 +144,9 @@
                   document.getElementById("pagination").insertAdjacentHTML('beforeend', this.responseText);
                 }
               };
-              xhttp.open("GET", "page2.html", true);
+              xhttp.open("GET", pages[i], true);
               xhttp.send();
+              i++
             }
         </script>
         <script src="main.js"></script>
