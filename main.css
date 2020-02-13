@@ -656,4 +656,9 @@ li.dropdown {
     background-color: lightslategray;
     font-size: 1em;
     color: #fff;
+    cursor: pointer;
+    outline: none;
+}
+#pagination-div button:hover{
+    box-shadow: 0 5px 4px #778899
 }
