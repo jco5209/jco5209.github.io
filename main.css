@@ -644,12 +644,12 @@ li.dropdown {
     } */
 } 
 
-#pagination-div{
+#pagi-div{
     display: flex;
     justify-content: center;
     margin-top: 50px;
 }
-#pagination-div button{
+#pagi-div button{
     width: 175px;
     height: 40px;
     border-radius: 10px;
@@ -659,6 +659,6 @@ li.dropdown {
     cursor: pointer;
     outline: none;
 }
-#pagination-div button:hover{
+#pagi-div button:hover{
     box-shadow: 0 5px 4px #778899
 }

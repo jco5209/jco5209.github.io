@@ -53,7 +53,7 @@
             <main id="main-content">
 
                 <section id="gallery">
-                    <ul id="pagination">
+                    <ul id="pagi-append">
                         <li>
                             <figure>
                                 <div class="relaDiv">
@@ -68,8 +68,8 @@
                         <li>
                             <figure>
                                 <div class="relaDiv">
-                                    <a href="product-page-buildings/PB-1.html">
-                                        <img src="images/framed buildings images/PB (1).webp" alt="">
+                                    <a href="#">
+                                        <img src="images/framed asian images/AP (2).webp" alt="">
                                     </a>
                                     <button class="galOvr">Snap View</button>
                                 </div>
@@ -80,7 +80,7 @@
                             <figure>
                                 <div class="relaDiv">
                                     <a href="product-page-buildings/PB-1.html">
-                                        <img src="images/framed flowers images/PF (1).webp" alt="">
+                                        <img src="images/framed asian images/AP (3).webp" alt="">
                                     </a>
                                     <button class="galOvr">Snap View</button>
                                 </div>
@@ -91,7 +91,7 @@
                             <figure>
                                 <div class="relaDiv">
                                     <a href="product-page-buildings/PB-1.html">
-                                        <img src="images/framed ls images/LS (1).webp" alt="">
+                                        <img src="images/framed asian images/AP (4).webp" alt="">
                                     </a>
                                     <button class="galOvr">Snap View</button>
                                 </div>
@@ -102,7 +102,51 @@
                             <figure>
                                 <div class="relaDiv">
                                     <a href="product-page-buildings/PB-1.html">
-                                        <img src="images/framed sc images/SC (10).webp" alt="">
+                                        <img src="images/framed asian images/AP (5).webp" alt="">
+                                    </a>
+                                    <button class="galOvr">Snap View</button>
+                                </div>
+                                <p>Painting Name</p>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <div class="relaDiv">
+                                    <a href="product-page-buildings/PB-1.html">
+                                        <img src="images/framed asian images/AP (6).webp" alt="">
+                                    </a>
+                                    <button class="galOvr">Snap View</button>
+                                </div>
+                                <p>Painting Name</p>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <div class="relaDiv">
+                                    <a href="product-page-buildings/PB-1.html">
+                                        <img src="images/framed asian images/AP (7).webp" alt="">
+                                    </a>
+                                    <button class="galOvr">Snap View</button>
+                                </div>
+                                <p>Painting Name</p>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <div class="relaDiv">
+                                    <a href="product-page-buildings/PB-1.html">
+                                        <img src="images/framed asian images/AP (8).webp" alt="">
+                                    </a>
+                                    <button class="galOvr">Snap View</button>
+                                </div>
+                                <p>Painting Name</p>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <div class="relaDiv">
+                                    <a href="product-page-buildings/PB-1.html">
+                                        <img src="images/framed asian images/AP (9).webp" alt="">
                                     </a>
                                     <button class="galOvr">Snap View</button>
                                 </div>
@@ -120,8 +164,32 @@
                                 <p>Painting Name</p>
                             </figure>
                         </li>
+                        <li>
+                            <figure>
+                                <div class="relaDiv">
+                                    <a href="product-page-buildings/PB-1.html">
+                                        <img src="images/framed asian images/AP (11).webp" alt="">
+                                    </a>
+                                    <button class="galOvr">Snap View</button>
+                                </div>
+                                <p>Painting Name</p>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <div class="relaDiv">
+                                    <a href="product-page-buildings/PB-1.html">
+                                        <img src="images/framed asian images/AP (12).webp" alt="">
+                                    </a>
+                                    <button class="galOvr">Snap View</button>
+                                </div>
+                                <p>Painting Name</p>
+                            </figure>
+                        </li>
                     </ul>
-                    <button type="button" onclick="loadDoc()">Load More</button>
+                    <div id="pagi-div">
+                        <button type="button" onclick="loadMore()">Load More</button>
+                    </div>
                 </section>
 
             </main>
@@ -133,15 +201,24 @@
             <img id="modal-content" src="">
         </div>
         <script>
-            function loadDoc() {
-              var xhttp = new XMLHttpRequest();
-              xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                  document.getElementById("pagination").insertAdjacentHTML('beforeend', this.responseText);
+            let loadMorePages = ["partials/asian/index.html"];
+            let loadMoreIterator = 0;
+            let paginationDiv = document.getElementById("pagi-div");
+            function loadMore() {
+                if(loadMoreIterator < loadMorePages.length) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            document.getElementById("pagi-append").insertAdjacentHTML('beforeend', this.responseText);
+                        }
+                    };
+                xhttp.open("GET", loadMorePages[loadMoreIterator], true);
+                xhttp.send();
+                loadMoreIterator++
                 }
-              };
-              xhttp.open("GET", "ajax_info.html", true);
-              xhttp.send();
+                if(loadMoreIterator == loadMorePages.length) {
+                    paginationDiv.style.display = "none";
+                }
             }
         </script>
         <script src="main.js"></script>
