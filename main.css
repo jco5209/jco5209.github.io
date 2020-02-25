@@ -546,22 +546,23 @@ li.dropdown {
 
 /* Midea Quiries */
 
-@media only screen and (max-width: 942px) {
-    header {
+@media only screen and (max-width: 942px){
+    header{
       flex-direction: column;
       align-items: center;
     }
-    header figure img {
+    header figure img{
         display: none
     }
-    header h1 {
+    header h1{
         text-align: center;
     }
-    nav {
+    nav{
         margin-top: -40px;
     }
-    .galOvr{
-        top: 75%;
+    .overlay{
+        /* top: 75%; */
+        display: none;
     }
     #modal-content{
         max-width: 90%;
@@ -574,13 +575,17 @@ li.dropdown {
     }
 }
 
-@media only screen and (max-width: 672px) {
-    nav ul {
+@media only screen and (max-width: 834px){
+    nav ul{
         display: none;
     }
-    .info-dropdown-hook {
+    .m-nav-dropdown{
         display: block;
         margin-top: 30px;
+    }
+    #gallery li{
+        margin: 0;
+        padding: 0;
     }
     #product-content{
         flex-direction: column;
@@ -591,7 +596,7 @@ li.dropdown {
     }
     #product-right{
         max-width: 100%;
-        width: 575px;
+        width: 708px;
     }
     #product-mobile-tab{
         display: block;
@@ -616,26 +621,20 @@ li.dropdown {
     .has-image__product{
         text-align: center;
     }
-    .shopify-buy-frame{
-        /* border: 1px solid black; */
-    }
+    /* .shopify-buy-frame{
+
+    } */
     .shopify-buy-frame{
         margin: auto;
     }
-    .shopify-buy__product {
+    .shopify-buy__product{
         text-align: center;
     }
-    /* footer{
-        height: 50px;
-    }
-    footer p{
-        margin-left: 0;
-        left: 6%;
-    } */
+
 }
 
-@media only screen and (max-width: 433px) {
-    .info-dropdown-hook {
+@media only screen and (max-width: 433px){
+    .m-nav-dropdown{
         display: block;
         margin-top: 30px;
     }
@@ -649,26 +648,4 @@ li.dropdown {
     #product-right{
         max-width: 100%;
     }
-    /* footer p{
-        left: 0;
-    } */
 } 
-
-#pagi-div{
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-}
-#pagi-div button{
-    width: 175px;
-    height: 40px;
-    border-radius: 10px;
-    background-color: lightslategray;
-    font-size: 1em;
-    color: #fff;
-    cursor: pointer;
-    outline: none;
-}
-#pagi-div button:hover{
-    box-shadow: 0 5px 4px #778899
-}
