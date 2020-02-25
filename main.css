@@ -563,6 +563,9 @@ li.dropdown {
     .galOvr{
         display: none;
     }
+    #gallery li img:hover{
+        transform: none;
+    }
     #modal-content{
         max-width: 90%;
     }
