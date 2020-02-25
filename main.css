@@ -408,6 +408,16 @@ footer p{
     cursor: pointer;
 }
 
+#p-page-lbox:hover{
+    box-shadow: 0 5px 4px #778899
+}
+
+#p-page-lbox span{
+    display: block;
+    transform: rotate(45deg);
+    font-size: 1.25em;
+}
+
 
 
 /* Info Gallery dropdown */
